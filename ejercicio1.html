@@ -63,14 +63,54 @@
             let mensaje = document.getElementById("mensaje").value;
 
             let resultado = validar(nombre, asunto, mensaje);
-            
+
             if (resultado == true){
                 exito();
+               
             };
 
         });
 
 
+        //Creamos una funcion que limpiara los mensajes de error
+        function limpiarErrores (){
+            document.querySelector(".resultado").innerHTML="";
+            document.querySelector(".errorNombre").innerHTML="";
+            document.querySelector(".errorAsunto").innerHTML="";
+            document.querySelector(".errorMensaje").innerHTML="";
+
+        }
+
+        //Creamos una funcion en donde si todo sale bien mostraremos un mensaje de exito
+        function exito() {
+            document.querySelector(".resultado").innerHTML="Mensaje enviado con éxito";
+        }
+
+        //Validamos que nombre asunto y mensaje tengamn valores de texto
+        function validar(nombre, asunto, mensaje) {
+            let pasamosValidacion = true;
+            let validacionNombre = /[a-zA-Z]/gim;
+            let validacionAsunto = /[a-zA-Z]/gim;
+            let validacioMensaje = /[a-zA-Z]/gim;
+
+            if (validacionNombre.test(nombre) == false) {
+                document.querySelector(".errorNombre").innerHTML="El nombre es requerido"
+                pasamosValidacion = false;
+            }
+
+            if (validacionAsunto.test(asunto) == false) {
+                document.querySelector(".errorAsunto").innerHTML="El asunto es requerido"
+                pasamosValidacion = false;
+            }
+
+             if (validacioMensaje.test(mensaje) == false) {
+                document.querySelector(".errorMensaje").innerHTML="El mensaje es requerido"
+                pasamosValidacion = false;
+            }
+            //Si llegamos aca devolvemos el valor true asignado anteriormente lo que nos permite mostrar el mensaje de exito
+            return pasamosValidacion;
+
+        }
 
 
     </script>
