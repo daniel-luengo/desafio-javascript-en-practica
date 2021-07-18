@@ -36,13 +36,15 @@
     </div>
     <script>
         
-       
+       //pasamos los valores a variables capturandolos por su ID o su clase segun corresponda
         var valor1 = document.getElementById("valor1");
         var valor2 = document.getElementById("valor2");
         var resultado = document.querySelector(".resultado");
+        var btnSumar = document.getElementById("btn-sumar");
+        var btnRestar = document.getElementById("btn-restar");
 
-
-     var btnSumar = document.getElementById("btn-sumar");
+        
+     //Creamos la funcion sumar
      btnSumar.addEventListener('click', function(){
         var a = parseInt(valor1.value);
         var b = parseInt(valor2.value);
@@ -53,8 +55,8 @@
 
      });
 
-     var btnRestar = document.getElementById("btn-restar");
-
+     
+    //Creamos la funcion restar con su respectiva restriccion
      btnRestar.addEventListener('click', function(){
         var a = valor1.value;
         var b = valor2.value;
