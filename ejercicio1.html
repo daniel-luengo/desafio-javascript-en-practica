@@ -47,7 +47,32 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+
+        //Capturamos el id del formulario y lo pasamos a una variable
+
+        var form = document.getElementById("formulario");
+        
+        //Creamos una "escucha" para el formulario
+        form.addEventListener("submit", function(){
+            event.preventDefault();
+            limpiarErrores();    
+
+            //Definimos variables
+            let nombre = document.getElementById("nombre").value;
+            let asunto = document.getElementById("asunto").value;
+            let mensaje = document.getElementById("mensaje").value;
+
+            let resultado = validar(nombre, asunto, mensaje);
+            
+            if (resultado == true){
+                exito();
+            };
+
+        });
+
+
+
+
     </script>
 </body>
 
