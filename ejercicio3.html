@@ -19,7 +19,7 @@
                         <input id="valor1" type="text">
                     </div>
                     <div>
-                        <label for="">Valor 2</label>
+                        <label class="txt2"  for="">Valor 2</label>
                         <input id="valor2" type="text">
                     </div>
                     <div style="display: flex">
@@ -35,7 +35,41 @@
         </div>
     </div>
     <script>
-    // Escríbe aquí tu código
+        
+       
+        var valor1 = document.getElementById("valor1");
+        var valor2 = document.getElementById("valor2");
+        var resultado = document.querySelector(".resultado");
+
+
+     var btnSumar = document.getElementById("btn-sumar");
+     btnSumar.addEventListener('click', function(){
+        var a = parseInt(valor1.value);
+        var b = parseInt(valor2.value);
+        var valorFinalSuma = a + b;
+        
+        resultado.innerHTML="" + valorFinalSuma;
+        console.log(a + b);
+
+     });
+
+     var btnRestar = document.getElementById("btn-restar");
+
+     btnRestar.addEventListener('click', function(){
+        var a = valor1.value;
+        var b = valor2.value;
+        var valorFinalResta = a - b;
+            if ((a-b)>=0) {
+                resultado.innerHTML= valorFinalResta
+            }else {
+                resultado.innerHTML = 0
+            }
+     });
+
+
+
+  
+
     </script>
 </body>
 
